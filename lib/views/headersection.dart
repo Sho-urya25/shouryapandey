@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:shouryapandey/animationctrls.dart';
+import 'package:shouryapandey/constants.dart';
 
 Row headerSection(BoxConstraints constraints, BuildContext context, RxDouble widt) {
   final _animationController = Get.find<Animationctrls>();
@@ -169,20 +170,7 @@ onTap:onTap ,
         color: Colors.grey[300],
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey[500]!,
-            offset: isHovering ? Offset(2.0, 2.0) : Offset(4.0, 4.0),
-            blurRadius: 15.0,
-            spreadRadius: 1.0,
-          ), // BoxShadow
-          BoxShadow(
-            color: Colors.white,
-            offset: isHovering ? Offset(-2.0, -2.0) : Offset(-4.0, -4.0),
-            blurRadius: 15.0,
-            spreadRadius: 1.0,
-          ),
-        ],
+        boxShadow: isHovering? neumorphicBoxShadowHover : neumorphicBoxShadow,
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),

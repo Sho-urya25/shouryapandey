@@ -1,4 +1,5 @@
  import 'package:flutter/material.dart';
+import 'package:shouryapandey/constants.dart';
 
 AnimatedContainer neomorphiContainer(
     double width,
@@ -12,20 +13,7 @@ AnimatedContainer neomorphiContainer(
       decoration: BoxDecoration(
         color: Colors.grey[300],
         shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey[500]!,
-            offset: Offset(4.0, 4.0),
-            blurRadius: 15.0,
-            spreadRadius: 1.0,
-          ), // BoxShadow
-          BoxShadow(
-            color: Colors.white,
-            offset: Offset(-4.0, -4.0),
-            blurRadius: 15.0,
-            spreadRadius: 1.0,
-          ),
-        ],
+        boxShadow: neumorphicBoxShadow,
       ),
       child: ClipRRect(borderRadius: BorderRadius.circular(30), child: child),
     );

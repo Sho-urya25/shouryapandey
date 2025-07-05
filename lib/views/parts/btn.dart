@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:shouryapandey/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NeomorphicButton extends StatelessWidget {
@@ -55,7 +56,7 @@ class NeomorphicButton extends StatelessWidget {
           width: width,
           padding: padding,
           decoration: BoxDecoration(
-            color: Colors.grey[300],
+            color: neumorphicColor,
             shape: isCircular ? BoxShape.circle : BoxShape.rectangle,
             borderRadius: isCircular ? null : BorderRadius.circular(12),
             border: isOutlined 
@@ -64,20 +65,7 @@ class NeomorphicButton extends StatelessWidget {
                     width: 2.0,
                   ) 
                 : null,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey[500]!,
-                offset: isHovering.value ? Offset(2.0, 2.0) : Offset(4.0, 4.0),
-                blurRadius: 15.0,
-                spreadRadius: 1.0,
-              ),
-              BoxShadow(
-                color: Colors.white,
-                offset: isHovering.value ? Offset(-2.0, -2.0) : Offset(-4.0, -4.0),
-                blurRadius: 15.0,
-                spreadRadius: 1.0,
-              ),
-            ],
+            boxShadow: isHovering.value?neumorphicBoxShadowHover : neumorphicBoxShadow,
           ),
           child: Center(
             child: svgPath != null 

@@ -333,8 +333,10 @@ Widget skillsPage(BuildContext context, BoxConstraints constraints) {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Wrap(
+                runAlignment: WrapAlignment.spaceBetween,
+                alignment: WrapAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     role,
@@ -346,6 +348,7 @@ Widget skillsPage(BuildContext context, BoxConstraints constraints) {
                           : Colors.grey[800],
                     ),
                   ),
+                  SizedBox(width: 10),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
